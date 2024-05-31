@@ -14,8 +14,16 @@ app_license = "mit"
 # app_include_js = "/assets/healthcare_extended/js/healthcare_extended.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/healthcare_extended/css/healthcare_extended.css"
-# web_include_js = "/assets/healthcare_extended/js/healthcare_extended.js"
+web_include_css = ["/assets/healthcare_extended/css/healthcare_extended.css",
+				   "https://cdn.datatables.net/v/dt/jq-3.7.0/dt-2.0.7/datatables.min.css"]
+web_include_js = ["https://cdn.datatables.net/v/dt/dt-2.0.7/datatables.min.js",
+				  "/assets/healthcare_extended/js/healthcare_extended.js"]
+
+website_route_rules = [
+	{"from_route": "/patients-list", "to_route": "/extend_patients/list"},
+	{"from_route": "/patients-list/new", "to_route": "/extend_patients/new"},
+	{"from_route": "/healthcare-service-unit-type", "to_route": "/healthcare_service_unit_type/list"}
+]
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "healthcare_extended/public/scss/website"
@@ -130,6 +138,7 @@ app_license = "mit"
 # 	}
 # }
 
+
 # Scheduled Tasks
 # ---------------
 
@@ -226,4 +235,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-

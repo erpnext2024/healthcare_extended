@@ -1,0 +1,68 @@
+<div class="nexusuite-input-wrapper nexusuite-input-{{ field.fieldtype|lower|replace(" ", "-") }}"
+	 id="field-{{ field.fieldname }}">
+	<label class="nexusuite-input-label">{{ field.label }} {% if
+					field.reqd %}<span
+		class="required">*</span>{% endif %}</label>
+
+	{% if field.fieldtype == "Section Break" %}
+		<div class="section-break-toggle">
+			<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
+				 fill="none">
+				<path d="M4.5 12L9 7.5L13.5 12" stroke="#344054" stroke-width="1.2"
+					  stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</div>
+	{% endif %}
+	{% if field.fieldtype == "Data" %}
+		<input type="text" class="nexusuite-input" name="{{ field.fieldname }}" {% if
+					   field.reqd %}required="required" {% endif %}>
+	{% endif %}
+
+	{% if field.fieldtype == "Select" %}
+		<select class="nexusuite-input" name="{{ field.fieldname }}" {% if
+						field.reqd %}required="required" {% endif %}>
+			{% for option in field.options %}
+				<option value="{{ option }}"
+						{% if field.default == option %}selected="selected"{% endif %}>{{ option }}</option>
+			{% endfor %}
+		</select>
+	{% endif %}
+
+	{% if field.fieldtype == "Date" %}
+		<input type="date" class="nexusuite-input" name="{{ field.fieldname }}" {% if
+					   field.reqd %}required="required" {% endif %}/>
+	{% endif %}
+
+	{% if field.fieldtype == "Check" %}
+		<input {% if field.default== "1" %}checked="checked"{% endif %}
+			   type="checkbox" value="{{ field.default }}"
+			   name="{{ field.fieldname }}"
+			   {% if field.reqd %}required="required"{% endif %}/>
+	{% endif %}
+
+	{% if field.fieldtype == "Link" %}
+		<select class="nexusuite-input" name="{{ field.fieldname }}" {% if
+						field.reqd %}required="required" {% endif %}>
+			{% for option in field.options %}
+				<option value="{{ option.name }}"
+						{% if field.default == option.name %}selected="selected"{% endif %}>{{ option.name }}</option>
+			{% endfor %}
+		</select>
+	{% endif %}
+
+	{% if field.fieldtype == "Small Text" %}
+		<textarea class="nexusuite-input" rows="6" name="{{ field.fieldname }}" {% if
+						field.reqd %}required="required" {% endif %}>
+		</textarea>
+	{% endif %}
+	{% if field.fieldtype == "Text" %}
+		<textarea class="nexusuite-input" rows="6" name="{{ field.fieldname }}" {% if
+						field.reqd %}required="required" {% endif %}>
+		</textarea>
+	{% endif %}
+
+
+	{% if field.description %}
+		<label class="nexusuite-input-description">{{ field.description }}</label>
+	{% endif %}
+</div>

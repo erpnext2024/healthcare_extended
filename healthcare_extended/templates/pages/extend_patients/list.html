@@ -1,0 +1,114 @@
+{% extends "templates/web.html" %}
+
+{% block title %}
+Patients List
+{% endblock %}
+
+{% block content %}
+<div class="patients-list">
+	{% include 'templates/common/breadcrumbs.html' %}
+
+
+	<div class="patients-list-header">
+		<h2 class="patients-list-title">Patients</h2>
+
+		<div class="patients-list-button-controls">
+			<a href="" class="nexusuite-button secondary">Refresh</a>
+			<a href="#" class="nexusuite-button primary nexusuite-toggle-popup" data-popup-id="new-patient-popup">+ New</a>
+		</div>
+	</div>
+
+	<div class="nexusuite-box-container">
+		<div class="nexusuite-table-filters">
+			<input type="text" id="filter-full-name" placeholder="Full Name">
+			<input type="text" id="filter-status" placeholder="Status">
+			<input type="text" id="filter-phone-number" placeholder="Phone Number">
+			<input type="text" id="filter-email" placeholder="Email">
+		</div>
+
+		<table class="patients-list-table nexusuite-table" id="patients-list-table">
+			<thead>
+			<tr>
+				<th></th>
+				<th>Full Name</th>
+				<th>Status</th>
+				<th>Phone Number</th>
+				<th>Email</th>
+				<th></th>
+			</tr>
+			</thead>
+
+			<tbody>
+			{% for patient in patient_list %}
+			<tr>
+				<td><input type="checkbox"/></td>
+				<td>{{patient.patient_name }}</td>
+				<td>
+					{% if patient.status %}
+					<span class="tag tag-active">Active</span>
+					{% else %}
+					<span class="tag tag-inactive">Inactive</span>
+					{% endif %}
+				</td>
+
+				<td>{{patient.phone if patient.phone else 'N/A'}}</td>
+				<td>{{patient.email if patient.email else 'N/A'}}</td>
+				<td>
+					<svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+						 xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M12.75 4.5H12V2.25C12 1.65326 11.7629 1.08097 11.341 0.65901C10.919 0.237053 10.3467 0 9.75 0H2.25C1.65326 0 1.08097 0.237053 0.65901 0.65901C0.237053 1.08097 0 1.65326 0 2.25V11.25C0.000739111 11.3981 0.0452909 11.5426 0.128041 11.6654C0.210791 11.7882 0.328036 11.8837 0.465 11.94C0.554009 11.982 0.651618 12.0025 0.75 12C0.848705 12.0006 0.946552 11.9817 1.03793 11.9443C1.12931 11.907 1.21242 11.852 1.2825 11.7825L3.39 9.6675H4.5V10.7475C4.5 11.3442 4.73705 11.9165 5.15901 12.3385C5.58097 12.7604 6.15326 12.9975 6.75 12.9975H11.94L13.7175 14.7825C13.7876 14.852 13.8707 14.907 13.9621 14.9443C14.0534 14.9817 14.1513 15.0006 14.25 15C14.3484 15.0025 14.446 14.982 14.535 14.94C14.672 14.8837 14.7892 14.7882 14.872 14.6654C14.9547 14.5426 14.9993 14.3981 15 14.25V6.75C15 6.15326 14.7629 5.58097 14.341 5.15901C13.919 4.73705 13.3467 4.5 12.75 4.5ZM4.5 6.75V8.1675H3.0825C2.9838 8.16693 2.88595 8.18585 2.79457 8.22317C2.70319 8.2605 2.62008 8.31549 2.55 8.385L1.5 9.4425V2.25C1.5 2.05109 1.57902 1.86032 1.71967 1.71967C1.86032 1.57902 2.05109 1.5 2.25 1.5H9.75C9.94891 1.5 10.1397 1.57902 10.2803 1.71967C10.421 1.86032 10.5 2.05109 10.5 2.25V4.5H6.75C6.15326 4.5 5.58097 4.73705 5.15901 5.15901C4.73705 5.58097 4.5 6.15326 4.5 6.75ZM13.5 12.4425L12.75 11.6925C12.6805 11.6216 12.5977 11.5653 12.5063 11.5266C12.4149 11.488 12.3167 11.4679 12.2175 11.4675H6.75C6.55109 11.4675 6.36032 11.3885 6.21967 11.2478C6.07902 11.1072 6 10.9164 6 10.7175V6.75C6 6.55109 6.07902 6.36032 6.21967 6.21967C6.36032 6.07902 6.55109 6 6.75 6H12.75C12.9489 6 13.1397 6.07902 13.2803 6.21967C13.421 6.36032 13.5 6.55109 13.5 6.75V12.4425Z"
+							fill="#CACFD7"/>
+					</svg>
+					{{ patient['_comments']|length if patient['_comments'] else '0' }}
+ 				</td>
+			</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+{% include 'templates/common/new-patient-popup.html' %}
+
+{% endblock %}
+
+{% block script %}
+<script>function fetchData() {
+
+	new DataTable('#patients-list-table', {
+		"ordering": false,
+		language: {
+			info: "Showing data _START_ to _END_ of _TOTAL_ Patients"
+		},
+		"pageLength": 0,
+		"paging": false, // Disable pagination
+		"deferRender": true,
+		"searching": true,
+		"dom": '<"top"i>rt<"bottom"flp><"clear">',
+		"initComplete": function () {
+			var api = this.api();
+			console.log(api);
+
+			// Apply the search for each input field
+			$('#filter-full-name').on('keyup change clear', function () {
+
+				api.column(1).search(this.value).draw();
+			});
+			$('#filter-status').on('keyup change clear', function () {
+				api.column(2).search(this.value).draw();
+			});
+			$('#filter-phone-number').on('keyup change clear', function () {
+				api.column(3).search(this.value).draw();
+			});
+			$('#filter-email').on('keyup change clear', function () {
+				api.column(4).search(this.value).draw();
+			});
+
+		}
+	});
+}
+
+document.addEventListener('DOMContentLoaded', fetchData);
+
+</script>
+{% endblock %}

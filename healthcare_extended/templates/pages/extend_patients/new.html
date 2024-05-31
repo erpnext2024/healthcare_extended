@@ -1,0 +1,55 @@
+{% extends "templates/web.html" %}
+
+{% block title %}
+	New Patient
+{% endblock %}
+
+{% block content %}
+	<div class="new-patient-wrapper">
+		{% include 'templates/common/breadcrumbs.html' %}
+
+		<form method="post" id="new-patient-form"
+			  action="/api/method/healthcare_extended.patients_api.submit_patient_form">
+			<input type="hidden" name="csrf_token" id="patient_csrf_token">
+			<div class="nexusuite-header-group">
+				<h2 class="nexusuite-title">New Patient</h2>
+				<button class="button button-primary">Save</button>
+			</div>
+			<div class="nexusuite-box-container">
+				{% for patient_field in patients_fields %}
+					{% set field = patient_field %}
+					{% include 'templates/common/input-wrapper.html' %}
+				{% endfor %}
+			</div>
+		</form>
+	</div>
+{% endblock %}
+
+{% block script %}
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			document.getElementById('patient_csrf_token').value = frappe.csrf_token;
+		});
+
+		document.getElementById('new-patient-form').addEventListener('submit', function (event) {
+			event.preventDefault();
+
+			var formData = new FormData(this);
+
+			fetch(this.action, {
+				method: 'POST',
+				body: formData
+			})
+				.then(response => response.json())
+				.then(data => {
+					if (data.message.status === "success")
+						location.href = '/patients-list'
+				})
+				.catch(error => {
+					console.error('Error:', error);
+					alert('An error occurred: ' + error.message);
+				});
+		});
+	</script>
+{% endblock %}

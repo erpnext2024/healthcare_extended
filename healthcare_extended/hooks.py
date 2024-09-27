@@ -38,6 +38,12 @@ website_route_rules = [
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
+doctype_list_js = {
+	"Patient Appointment": "healthcare_extended/custom_secript/patient_appointment_list.js",
+	"Healthcare Service Unit":"healthcare_extended/custom_secript/healthcare_service_unit.js",
+	"Healthcare Service Unit Type":"healthcare_extended/custom_secript/healthcare_service_unit_type.js",
+	"Healthcare Practitioner":"healthcare_extended/custom_secript/healthcare_practitioner.js"
+}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 

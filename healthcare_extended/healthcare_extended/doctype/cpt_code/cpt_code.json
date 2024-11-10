@@ -1,29 +1,29 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:icd_code",
- "creation": "2024-11-11 00:32:05.115506",
+ "autoname": "field:cpt_code",
+ "creation": "2024-11-11 00:05:17.694354",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "icd_code"
+  "cpt_code"
  ],
  "fields": [
   {
-   "fieldname": "icd_code",
+   "fieldname": "cpt_code",
    "fieldtype": "Data",
-   "label": "ICD Code",
+   "label": "CPT Code",
    "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-11 00:32:18.863967",
+ "modified": "2024-11-11 00:34:35.962476",
  "modified_by": "Administrator",
  "module": "Healthcare Extended",
- "name": "ICD Code",
+ "name": "CPT Code",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

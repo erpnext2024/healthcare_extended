@@ -1,29 +1,41 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:icd_code",
- "creation": "2024-11-11 00:32:05.115506",
+ "autoname": "field:time_zone",
+ "creation": "2024-11-11 00:16:45.723955",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "icd_code"
+  "time_zone",
+  "utc_offset",
+  "name1"
  ],
  "fields": [
   {
-   "fieldname": "icd_code",
+   "fieldname": "time_zone",
    "fieldtype": "Data",
-   "label": "ICD Code",
+   "label": "Time Zone ",
    "unique": 1
+  },
+  {
+   "fieldname": "utc_offset",
+   "fieldtype": "Data",
+   "label": "UTC Offset"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-11 00:32:18.863967",
+ "modified": "2024-11-11 00:34:24.346004",
  "modified_by": "Administrator",
  "module": "Healthcare Extended",
- "name": "ICD Code",
+ "name": "Time Zone",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

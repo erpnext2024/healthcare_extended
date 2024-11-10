@@ -1,30 +1,41 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:icd_code",
- "creation": "2024-11-11 00:32:05.115506",
+ "creation": "2024-11-11 00:24:39.500261",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "icd_code"
+  "patient_appointment",
+  "appointment_type",
+  "date"
  ],
  "fields": [
   {
-   "fieldname": "icd_code",
-   "fieldtype": "Data",
-   "label": "ICD Code",
-   "unique": 1
+   "fieldname": "patient_appointment",
+   "fieldtype": "Link",
+   "label": "Patient Appointment",
+   "options": "Patient Appointment"
+  },
+  {
+   "fieldname": "appointment_type",
+   "fieldtype": "Link",
+   "label": "Appointment Type",
+   "options": "Appointment Type"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-11 00:32:18.863967",
+ "modified": "2024-11-11 00:33:37.871815",
  "modified_by": "Administrator",
  "module": "Healthcare Extended",
- "name": "ICD Code",
- "naming_rule": "By fieldname",
+ "name": "Patient Appointment Info",
  "owner": "Administrator",
  "permissions": [
   {

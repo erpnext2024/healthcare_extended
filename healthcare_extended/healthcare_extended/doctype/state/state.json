@@ -1,29 +1,29 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:icd_code",
- "creation": "2024-11-11 00:32:05.115506",
+ "autoname": "field:state",
+ "creation": "2024-11-11 00:14:25.047170",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "icd_code"
+  "state"
  ],
  "fields": [
   {
-   "fieldname": "icd_code",
+   "fieldname": "state",
    "fieldtype": "Data",
-   "label": "ICD Code",
+   "label": "State",
    "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-11 00:32:18.863967",
+ "modified": "2024-11-11 00:34:07.429484",
  "modified_by": "Administrator",
  "module": "Healthcare Extended",
- "name": "ICD Code",
+ "name": "State",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

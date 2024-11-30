@@ -1,0 +1,144 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-30 15:51:18.470347",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "patient",
+  "column_break_qiukk",
+  "status",
+  "section_break_fpgcb",
+  "first_name",
+  "last_name",
+  "middle_name",
+  "date_of_birth",
+  "gender",
+  "social_security_number",
+  "column_break_5eouz",
+  "address",
+  "phone_numbers_home_cell_work",
+  "email_address",
+  "relationship_to_insured",
+  "preferred_contact_method"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive"
+  },
+  {
+   "fieldname": "column_break_qiukk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_fpgcb",
+   "fieldtype": "Section Break",
+   "label": "Patient Information"
+  },
+  {
+   "fetch_from": "patient.first_name",
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name"
+  },
+  {
+   "fetch_from": "patient.last_name",
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fetch_from": "patient.middle_name",
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name"
+  },
+  {
+   "fetch_from": "patient.dob",
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fetch_from": "patient.sex",
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "label": "Gender"
+  },
+  {
+   "fieldname": "column_break_5eouz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "patient.custom_social_security_number",
+   "fieldname": "social_security_number",
+   "fieldtype": "Data",
+   "label": "Social Security Number"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Long Text",
+   "label": "Address",
+   "max_height": "110px"
+  },
+  {
+   "fetch_from": "patient.phone",
+   "fieldname": "phone_numbers_home_cell_work",
+   "fieldtype": "Data",
+   "label": "Phone Numbers (Home, Cell, Work)"
+  },
+  {
+   "fetch_from": "patient.email",
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "relationship_to_insured",
+   "fieldtype": "Select",
+   "label": "Relationship to Insured",
+   "options": "Self\nSpouse\nChild\nOther"
+  },
+  {
+   "fieldname": "preferred_contact_method",
+   "fieldtype": "Select",
+   "label": "Preferred Contact Method",
+   "options": "Phone\nEmail\nMail"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-30 17:13:05.903436",
+ "modified_by": "Administrator",
+ "module": "Healthcare Extended",
+ "name": "Medical Billing",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,113 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-12-08 22:32:20.422957",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "patient_id",
+  "insurance_company_name",
+  "policy_number",
+  "group_number",
+  "policyholder_name",
+  "policyholder_date_of_birth",
+  "column_break_o06lt",
+  "insurance_type",
+  "insurance_address",
+  "insurance_phone_number",
+  "effective_date",
+  "effective_end_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient_id",
+   "fieldtype": "Link",
+   "label": "Patient ID",
+   "options": "Patient"
+  },
+  {
+   "fieldname": "insurance_company_name",
+   "fieldtype": "Data",
+   "label": "Insurance Company Name"
+  },
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Data",
+   "label": "Policy Number"
+  },
+  {
+   "fieldname": "group_number",
+   "fieldtype": "Data",
+   "label": "Group Number"
+  },
+  {
+   "fieldname": "policyholder_name",
+   "fieldtype": "Data",
+   "label": "Policyholder Name"
+  },
+  {
+   "fieldname": "column_break_o06lt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "policyholder_date_of_birth",
+   "fieldtype": "Date",
+   "label": "Policyholder Date of Birth"
+  },
+  {
+   "fieldname": "insurance_type",
+   "fieldtype": "Select",
+   "label": "Insurance Type",
+   "options": "Primary\nSecondary"
+  },
+  {
+   "fieldname": "insurance_address",
+   "fieldtype": "Long Text",
+   "label": "Insurance Address",
+   "max_height": "110px"
+  },
+  {
+   "fieldname": "insurance_phone_number",
+   "fieldtype": "Phone",
+   "label": "Insurance Phone Number"
+  },
+  {
+   "fieldname": "effective_date",
+   "fieldtype": "Date",
+   "label": "Effective Start Date",
+   "width": "150px"
+  },
+  {
+   "fieldname": "effective_end_date",
+   "fieldtype": "Date",
+   "label": "Effective End Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-08 22:43:21.338734",
+ "modified_by": "Administrator",
+ "module": "Healthcare Extended",
+ "name": "Insurance Information",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

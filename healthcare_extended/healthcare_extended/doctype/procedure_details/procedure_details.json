@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-15 23:34:50.251841",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "billing_id",
+  "procedure_code",
+  "description_of_procedure",
+  "tooth_number",
+  "tooth_surface"
+ ],
+ "fields": [
+  {
+   "fieldname": "billing_id",
+   "fieldtype": "Link",
+   "label": "Billing ID",
+   "options": "Billing Information"
+  },
+  {
+   "fieldname": "procedure_code",
+   "fieldtype": "Data",
+   "label": "Procedure Code"
+  },
+  {
+   "fieldname": "description_of_procedure",
+   "fieldtype": "Long Text",
+   "label": "Description of Procedure"
+  },
+  {
+   "fieldname": "tooth_number",
+   "fieldtype": "Select",
+   "label": "Tooth Number",
+   "options": "\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32"
+  },
+  {
+   "fieldname": "tooth_surface",
+   "fieldtype": "Select",
+   "label": "Tooth Surface",
+   "options": "\nMesial\nDistal\nOcclusal"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-15 23:34:50.251841",
+ "modified_by": "Administrator",
+ "module": "Healthcare Extended",
+ "name": "Procedure Details",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

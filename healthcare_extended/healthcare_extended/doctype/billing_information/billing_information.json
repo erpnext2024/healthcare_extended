@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-15 23:20:56.958314",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "patient_id",
+  "date_of_service",
+  "billing_date",
+  "total_amount_billed",
+  "amount_paid_by_insurance",
+  "amount_paid_by_patient",
+  "amount_due_by_patient",
+  "payment_due_date",
+  "billing_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient_id",
+   "fieldtype": "Link",
+   "label": "Patient ID",
+   "options": "Patient"
+  },
+  {
+   "fieldname": "date_of_service",
+   "fieldtype": "Date",
+   "label": "Date of Service"
+  },
+  {
+   "fieldname": "billing_date",
+   "fieldtype": "Date",
+   "label": "Billing Date"
+  },
+  {
+   "fieldname": "total_amount_billed",
+   "fieldtype": "Currency",
+   "label": "Total Amount Billed"
+  },
+  {
+   "fieldname": "amount_paid_by_insurance",
+   "fieldtype": "Currency",
+   "label": "Amount Paid by Insurance"
+  },
+  {
+   "fieldname": "amount_paid_by_patient",
+   "fieldtype": "Data",
+   "label": "Amount Paid by Patient"
+  },
+  {
+   "fieldname": "amount_due_by_patient",
+   "fieldtype": "Data",
+   "label": "Amount Due by Patient"
+  },
+  {
+   "fieldname": "payment_due_date",
+   "fieldtype": "Date",
+   "label": "Payment Due Date"
+  },
+  {
+   "fieldname": "billing_status",
+   "fieldtype": "Select",
+   "label": "Billing Status",
+   "options": "Pending\nPaid\nOverdue"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-15 23:20:56.958314",
+ "modified_by": "Administrator",
+ "module": "Healthcare Extended",
+ "name": "Billing Information",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

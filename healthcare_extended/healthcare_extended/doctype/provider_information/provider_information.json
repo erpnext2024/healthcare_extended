@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-12-15 23:13:44.044667",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "provider_name",
+  "npi_number",
+  "license_number",
+  "office_address",
+  "office_phone_number",
+  "tax_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "provider_name",
+   "fieldtype": "Text",
+   "label": "Provider Name"
+  },
+  {
+   "fieldname": "npi_number",
+   "fieldtype": "Data",
+   "label": "NPI Number"
+  },
+  {
+   "fieldname": "license_number",
+   "fieldtype": "Data",
+   "label": "License Number"
+  },
+  {
+   "fieldname": "office_address",
+   "fieldtype": "Long Text",
+   "label": "Office Address"
+  },
+  {
+   "fieldname": "office_phone_number",
+   "fieldtype": "Phone",
+   "label": "Office Phone Number"
+  },
+  {
+   "fieldname": "tax_id",
+   "fieldtype": "Data",
+   "label": "Tax ID"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-15 23:13:44.044667",
+ "modified_by": "Administrator",
+ "module": "Healthcare Extended",
+ "name": "Provider Information",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

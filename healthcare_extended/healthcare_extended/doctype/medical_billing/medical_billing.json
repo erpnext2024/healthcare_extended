@@ -24,7 +24,13 @@
   "relationship_to_insured",
   "preferred_contact_method",
   "section_break_uozld",
-  "insurance_information"
+  "insurance_information",
+  "section_break_4l24c",
+  "provider_information_table",
+  "section_break_xiv6x",
+  "billing_information_table",
+  "section_break_gawhj",
+  "procedure_details_table"
  ],
  "fields": [
   {
@@ -127,11 +133,41 @@
   {
    "fieldname": "section_break_uozld",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_4l24c",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "provider_information_table",
+   "fieldtype": "Table",
+   "label": "Provider Information Table",
+   "options": "Provider Information"
+  },
+  {
+   "fieldname": "section_break_xiv6x",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "billing_information_table",
+   "fieldtype": "Table",
+   "label": "Billing Information Table",
+   "options": "Billing Information"
+  },
+  {
+   "fieldname": "section_break_gawhj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "procedure_details_table",
+   "fieldtype": "Table",
+   "label": "Procedure Details Table",
+   "options": "Procedure Details"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-03 19:18:18.599028",
+ "modified": "2025-01-03 20:48:53.864262",
  "modified_by": "Administrator",
  "module": "Healthcare Extended",
  "name": "Medical Billing",
